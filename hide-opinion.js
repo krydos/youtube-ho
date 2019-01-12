@@ -13,13 +13,16 @@ const barSelectors = [
   '.video-extras-sparkbars',
 ];
 
+let styleString =  '';
+
+// build a css string
 const elementsToHide = [].concat(likeSelectors, dislikeSelectors, barSelectors).map(function(selector) {
-  return document.querySelector(selector);
+  styleString += selector + '{visibility:hidden;}';
 });
 
-
-elementsToHide.forEach(function(el) {
-  if (!el) return;
-
-  el.style.visibility = 'hidden';
-});
+// insert new css
+const head = document.head;
+const style = document.createElement('style');
+style.type = 'text/css';
+style.appendChild(document.createTextNode(styleString));
+head.appendChild(style);
