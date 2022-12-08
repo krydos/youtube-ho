@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Youtube Hide Opinion",
-  "version": "1.2",
+  "version": "1.4",
 
   "description": "Hides number of likes and dislikes from Youtube",
 
